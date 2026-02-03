@@ -2,8 +2,6 @@
 
 Educational demonstration showing how the variational information bottleneck (VIB) trades reconstruction quality against preservation of conserved quantities (angular momentum *L*, energy *H*) in a simple integrable Hamiltonian system.
 
-![Results overview](vib_harmonic_results.png)
-
 ### Core observation
 
 Stronger compression (higher β) systematically violates classical conservation laws — even though the underlying dynamics are perfectly integrable.
@@ -25,7 +23,4 @@ Connects to recent work on learning / enforcing symmetries and conserved quantit
 - Inoue et al. (2021). "Interpretable conservation law estimation…" — Phys. Rev. E
 - Symplectic & Hamiltonian neural network literature (various 2022–2025)
 
-### Requirements
 
-```bash
-pip install torch numpy matplotlib scipy
