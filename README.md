@@ -1,6 +1,6 @@
 # Physics-Informed Variational Information Bottleneck (Physics-VIB)
 
-**Fframework for real-time physics simulation, latent space compression, and trajectory tracking.**
+**Framework for real-time physics simulation, latent space compression, and trajectory tracking.**
 
 ## Core
 
