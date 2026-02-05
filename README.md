@@ -1,25 +1,23 @@
-# How an information-theoretic bottleneck affects the preservation of physical symmetries.
+# Physics-Informed Variational Information Bottleneck (Physics-VIB)
 
-Information-theoretic latent models (like VIB) can learn physically meaningful representations of dynamical systems without violating key conservation laws, and we can observe this live as the model learns.
-
-A demonstration of the trade-off between **Information Compression** and **Physical Conservation**. 
-This project explores how "Rational Inattention" (limited Shannon capacity) leads to the violation of Noetherian charges ($L, H$) in a Hamiltonian system.
-This work bridges information theory and physics‑informed learning by explicitly measuring how mutual information constraints affect the preservation of symmetries and conservation laws.
+**Fframework for real-time physics simulation, latent space compression, and trajectory tracking.**
 
 ## Core
-* **System:** 2D Isotropic Harmonic Oscillator (Conserves Energy $H$ and Angular Momentum $L$).s
-* **Mechanism:** Variational Information Bottleneck (VIB).
-* **The Insight:** As the "Price of Attention" ($\beta$) increases, the model prioritizes reconstruction speed over physical symmetry.
+
+- A **symplectic energy-preserving oscillator** (physics engine)
+- A **variational information bottleneck (VIB)** for latent space compression
+- **Real-time visualization** of trajectory, latent space, and conservation metrics
+
+The model learns to compress high-dimensional physics trajectories while preserving key invariants (e.g., angular momentum), with live plotting for interactive analysis.
+
+---
 
 ## Features
-- **Symplectic Leapfrog Integrator**: Baseline drift $\ll 10^{-6}$.
-- **VIB Objective**: $\mathcal{L} = \text{MSE} + \beta \cdot \text{KL}(q(z|x) || p(z))$.
-- **Canonical Metrics**: Quantitative drift in $L$ and $H$ vs. Mutual Information $I(z;x)$.
-- **Visuals**: Phase-space portraits and Poincaré sections.
 
-## Comparison
-| Architecture | Complexity | Symmetry | Attention Logic |
-| :--- | :--- | :--- | :--- |
-| **Transformer** | $O(N^2)$ | Learned | Heuristic (Softmax) |
-| **Hamiltonian NN** | $O(N)$ | Fixed | Constant |
-| **Rational-Canonical**| **$O(N \log N)$** | **Isolated** | **Economic (RI)** |
+| Feature                     | Description                                                                 |
+|-----------------------------|-----------------------------------------------------------------------------|
+| **Physics Engine**          | Symplectic integrator for energy-preserving harmonic oscillator dynamics.   |
+| **VIB Model**               | Neural network with GELU activations, KL divergence, and reconstruction.  |
+| **Real-Time Tracking**      | Live matplotlib visualization of trajectory, latent space, and metrics. |
+| **Conservation Monitoring** | Tracks angular momentum error during training.                             |
+
